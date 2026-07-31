@@ -1,260 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Practical information and updates about our tools and how to use technology responsibly.">
-    <title>Blog &amp; Insights | Beacon Digital Solutions</title>
-    
-    <!-- Favicon -->
+    <title>Blog | Private budgeting, plainly explained | Beacon Digital Solutions</title>
+    <meta name="description" content="Practical writing about zero-based budgeting, keeping your financial data private, and getting more out of Thrive on Mac and iPhone.">
+    <link rel="canonical" href="https://beacondigitalsolutionsllc.com/blog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog | Beacon Digital Solutions">
+    <meta property="og:description" content="Practical writing about zero-based budgeting and keeping your financial data private.">
+    <meta property="og:url" content="https://beacondigitalsolutionsllc.com/blog.html">
+    <meta property="og:image" content="https://beacondigitalsolutionsllc.com/images/Thrive/dashboard-iphone.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="apple-itunes-app" content="app-id=6779286706">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png?v=1">
     <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon-32x32.png?v=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon-16x16.png?v=1">
     <link rel="manifest" href="site.webmanifest?v=1">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
-        }
-    </style>
+    <script data-goatcounter="https://beacondigitalsolutionsllc.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-slate-950 text-slate-200 antialiased">
 
-    <!-- HEADER -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
-        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-                <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
-                <div>
-                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
-                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
-                </div>
-            </div>
-            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="index.html" class="hover:text-cyan-400">Home</a>
-                <a href="thrive.html" class="hover:text-cyan-400">Thrive</a>
-                <a href="blog.html" class="text-cyan-400">Blog</a>
-                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
-                <a href="about.html" class="hover:text-cyan-400">About</a>
-                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
-            </nav>
-            <!-- Mobile Menu Button -->
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+<nav class="border-b border-slate-800 sticky top-0 bg-slate-950/90 backdrop-blur z-20">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center gap-x-6 text-sm">
+        <a href="index.html" class="flex items-center gap-x-2 text-white font-semibold">
+            <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md">
+            <span>Thrive</span>
+        </a>
+        <div class="flex items-center gap-x-5 text-slate-400 ml-auto">
+            <a href="thrive.html" class="hover:text-white hidden sm:inline">The app</a>
+            <a href="blog.html" class="text-white">Blog</a>
+            <a href="support.html" class="hover:text-white hidden sm:inline">Support</a>
+            <a href="https://apps.apple.com/app/id6779286706"
+               class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-4 py-2 rounded-2xl">Get Thrive</a>
+        </div>
+    </div>
+</nav>
 
-            <a href="thrive.html" 
-               class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-2.5 rounded-2xl text-sm">Get Thrive</a>
-        </div>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
-            <a href="index.html" class="hover:text-cyan-400">Home</a>
-            <a href="products.html" class="hover:text-cyan-400">Products</a>
-            <a href="thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
-                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
-                <span>Thrive</span>
-            </a>
-            <a href="videos.html" class="hover:text-cyan-400">Videos</a>
-            <a href="about.html" class="hover:text-cyan-400">About</a>
-            <a href="contact.html" class="hover:text-cyan-400">Contact</a>
-            <a href="products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
-                <i class="fas fa-wallet"></i> See Our Tools
-            </a>
-        </div>
+<header class="max-w-5xl mx-auto px-6 pt-16 pb-10">
+    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">Writing</h1>
+    <p class="text-lg text-slate-400 max-w-2xl">Zero-based budgeting, keeping your financial records to yourself, and getting more out of Thrive. Written by the person who builds it.</p>
 </header>
 
-    <div class="max-w-screen-2xl mx-auto px-6 py-12">
-        <h1 class="text-5xl font-bold tracking-tight mb-4">Blog &amp; Insights</h1>
-        <p class="text-xl text-slate-400 mb-16">Practical information about our tools, how they work, and ways to use technology in a responsible manner.</p>
+<main class="max-w-5xl mx-auto px-6 pb-16">
 
-        <!-- Featured Hero Post -->
-        <div class="mb-20">
-            <div class="hero-bg rounded-3xl overflow-hidden card-hover border border-amber-500/20">
-                <div class="relative h-96 flex items-center justify-center overflow-hidden">
-                    <div class="absolute inset-0 bg-[radial-gradient(at_center,#fbbf24_0%,transparent_70%)] opacity-10"></div>
-                    <i class="fas fa-bolt text-[280px] text-amber-400/10 absolute"></i>
-                    
-                    <div class="relative text-center px-8 z-10">
-                        <div class="inline-flex items-center gap-2 bg-amber-500 text-slate-950 text-xs font-bold uppercase tracking-widest px-6 py-2 rounded-full mb-6">
-                            <i class="fas fa-bolt"></i> NEW LIVE BUILD
-                        </div>
-                        <h2 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none text-white mb-6">
-                            I Built a Zero-Cost AI Sales Agent<br>in 47 Minutes
-                        </h2>
-                        <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-                            Qualifies leads, books calls 24/7, and follows up automatically.<br>
-                            Full prompt + step-by-step workflow included.
-                        </p>
-                    </div>
-                </div>
+    <a href="blog/thrive-vs-ynab.html"
+       class="block rounded-2xl border border-slate-800 hover:border-slate-600 bg-slate-900/40 p-8 sm:p-10 transition-colors">
+        <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-3">Comparison</p>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-3 leading-snug">Thrive vs. YNAB: an honest comparison</h2>
+        <p class="text-slate-400 mb-5 max-w-2xl">Both do zero-based budgeting. They disagree about whether a budgeting app should hold your bank login — and that is the actual decision. Includes the three things YNAB does better.</p>
+        <p class="text-slate-500 text-sm">July 31, 2026 &middot; 6 min read</p>
+    </a>
 
-                <div class="p-10 bg-slate-900 flex flex-col md:flex-row gap-6 items-center justify-between">
-                    <div class="text-slate-400">
-                        March 25, 2026 • 9 min read • Video + Prompt
-                    </div>
-                    <a href="blog/ai-sales-agent-47-minutes.html" 
-                       class="inline-flex items-center gap-x-3 bg-white text-slate-950 font-semibold px-10 py-4 rounded-3xl hover:bg-amber-400 hover:text-slate-950 transition-all">
-                        Read the Full Post + Get the Prompt
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <section class="mt-14 border-t border-slate-800 pt-10">
+        <h2 class="text-sm uppercase tracking-widest text-slate-500 font-medium mb-6">Being written</h2>
+        <ul class="space-y-4 text-slate-400">
+            <li>Zero-based budgeting: a complete beginner's guide</li>
+            <li>How to budget without linking your bank account</li>
+            <li>Exporting transactions as CSV from Chase, USAA, and Bank of America</li>
+            <li>Tithing first: building giving into a zero-based budget</li>
+            <li>Tracking 529 college savings alongside your monthly budget</li>
+        </ul>
+        <p class="text-slate-500 text-sm mt-6">New writing goes to the newsletter first.</p>
+    </section>
 
-        <!-- Other Posts -->
-        <h3 class="text-2xl font-semibold mb-8 text-slate-300">More Recent Posts</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Fortune 500 -->
-            <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                <div class="h-52 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
-                    <i class="fas fa-building text-8xl text-white/30"></i>
-                </div>
-                <div class="p-8">
-                    <div class="text-xs text-slate-400 mb-3">Mar 24, 2026 • 11 min</div>
-                    <h3 class="font-semibold text-2xl leading-tight mb-4">How I Use AI Every Day Inside a Fortune 500 Company</h3>
-                    <p class="text-slate-400 line-clamp-3">Safe, approved workflows that deliver real results in a large enterprise.</p>
-                    <a href="blog/ai-in-fortune-500.html" class="text-cyan-400 font-medium flex items-center gap-x-2 mt-6 hover:underline">
-                        Read Full Post →
-                    </a>
-                </div>
-            </div>
-
-            <!-- MBA -->
-            <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                <div class="h-52 bg-gradient-to-br from-violet-600 to-purple-500 flex items-center justify-center">
-                    <i class="fas fa-graduation-cap text-8xl text-white/30"></i>
-                </div>
-                <div class="p-8">
-                    <div class="text-xs text-slate-400 mb-3">Mar 23, 2026 • 10 min</div>
-                    <h3 class="font-semibold text-2xl leading-tight mb-4">How AI Is Helping Me Crush My MBA While Running a Business</h3>
-                    <p class="text-slate-400 line-clamp-3">Exact prompts and workflows that save hours every week.</p>
-                    <a href="blog/ai-mba-workflow.html" class="text-cyan-400 font-medium flex items-center gap-x-2 mt-6 hover:underline">
-                        Read Full Post →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Top 7 Tools -->
-            <div class="bg-slate-900 rounded-3xl overflow-hidden card-hover">
-                <div class="h-52 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-                    <i class="fas fa-chart-line text-8xl text-white/30"></i>
-                </div>
-                <div class="p-8">
-                    <div class="text-xs text-slate-400 mb-3">Mar 22, 2026 • 12 min</div>
-                    <h3 class="font-semibold text-2xl leading-tight mb-4">Top 7 AI Tools I Actually Use in Client Projects Right Now</h3>
-                    <p class="text-slate-400 line-clamp-3">Ranked by real ROI across enterprise and small business work.</p>
-                    <a href="blog/top-7-ai-tools-2026.html" class="text-cyan-400 font-medium flex items-center gap-x-2 mt-6 hover:underline">
-                        Read Full Post →
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-        
-<!-- Community signup -->
-<section class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800">
-    <div class="bg-slate-900 rounded-3xl p-12 md:p-16 text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-sm font-bold uppercase tracking-widest px-6 py-2 rounded-full mb-6">
-            <i class="fas fa-users"></i> FOR FAMILIES BUILDING BETTER TOOLS
-        </div>
-        
-        <h2 class="text-4xl font-semibold mb-4">Join families who want their tools to protect them.</h2>
-        <p class="text-xl text-slate-300 mb-10 max-w-xl mx-auto">
-            Occasional updates on our tools and practical information for using technology responsibly.
-        </p>
-        
-        <form id="blog-community-form" class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" id="blog-community-email" placeholder="your@email.com" required class="bg-slate-800 border border-slate-700 focus:border-emerald-400 rounded-3xl px-6 py-4 flex-1 outline-none text-slate-200">
-            <button type="submit" id="blog-community-btn" class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-8 py-4 rounded-3xl">Join the Community</button>
+    <section class="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-8">
+        <h2 class="text-xl font-semibold text-white mb-2">Get new posts by email</h2>
+        <p class="text-slate-400 mb-6 max-w-xl">What's new in Thrive, and one practical idea about handling money well. No tracking pixel, and unsubscribe in one click.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/BeaconDigitalSolutionsLLC"
+              method="post"
+              target="popupwindow"
+              onsubmit="window.open('https://buttondown.com/BeaconDigitalSolutionsLLC', 'popupwindow')"
+              class="flex flex-col sm:flex-row gap-3 max-w-lg">
+            <label for="bd-email-blog" class="sr-only">Email address</label>
+            <input type="email" name="email" id="bd-email-blog" required placeholder="you@example.com"
+                   class="flex-1 min-w-0 bg-slate-950 border border-slate-700 focus:border-emerald-400 focus:outline-none rounded-3xl px-5 py-3 text-white placeholder-slate-500">
+            <button type="submit"
+                    class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-7 py-3 rounded-3xl whitespace-nowrap">Subscribe</button>
         </form>
-        <p id="blog-community-msg" class="text-sm mt-3"></p>
+    </section>
 
-        <script>
-            // Blog community signup — owned records via backend
-            const COMMUNITY_ENDPOINT = 'http://localhost:5001/community/signup';
-            const bform = document.getElementById('blog-community-form');
-            if (bform) {
-                bform.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('blog-community-email').value.trim();
-                    const btn = document.getElementById('blog-community-btn');
-                    const msg = document.getElementById('blog-community-msg');
-                    if (!email) return;
-                    btn.disabled = true; btn.textContent = 'Joining...';
-                    try {
-                        const res = await fetch(COMMUNITY_ENDPOINT, {
-                            method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({email, source: 'website_blog'})
-                        });
-                        if (res.ok) {
-                            msg.textContent = 'Thank you — added to the list.';
-                            msg.className = 'text-sm mt-3 text-emerald-400';
-                        } else { throw new Error(); }
-                    } catch (err) {
-                        msg.textContent = 'Submission failed. Please email support@beacondigitalsolutionsllc.com';
-                        msg.className = 'text-sm mt-3 text-red-400';
-                        btn.disabled = false; btn.textContent = 'Join the Community';
-                    }
-                });
-            }
-        </script>
-        
-        <p class="text-xs text-slate-400 mt-6">We respect your time and your data the same way we respect it in our tools.</p>
+</main>
+
+<footer class="border-t border-slate-800 py-10">
+    <div class="max-w-5xl mx-auto px-6 text-slate-500 text-sm">
+        &copy; 2026 Beacon Digital Solutions LLC &middot;
+        <a href="thrive.html" class="hover:text-white">Thrive</a> &middot;
+        <a href="privacy.html" class="hover:text-white">Privacy</a> &middot;
+        <a href="terms.html" class="hover:text-white">Terms</a>
     </div>
-</section>
+</footer>
 
-    <footer class="bg-slate-950 py-16 border-t border-slate-800">
-        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
-            <div>
-                <div class="flex items-center gap-x-3 mb-6">
-                    <img src="images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
-                    <div>
-                        <span class="font-semibold text-2xl">Beacon</span>
-                        <span class="text-slate-400 text-lg">Digital Solutions</span>
-                    </div>
-                </div>
-                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
-            </div>
-            
-            <div class="flex flex-col gap-y-2 text-sm">
-                <a href="index.html" class="hover:text-cyan-400">Home</a>
-                <a href="products.html" class="hover:text-cyan-400">Products</a>
-                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
-                <a href="about.html" class="hover:text-cyan-400">About</a>
-                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
-                <a href="support.html" class="hover:text-cyan-400">Support</a>
-            </div>
-            
-            <div>
-                <p class="text-slate-400 text-sm mb-4">Legal</p>
-                <div class="flex flex-col gap-y-1 text-sm">
-                    <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
-                    <a href="eula.html" class="hover:text-cyan-400">EULA</a>
-                </div>
-                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
-                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        tailwind.config = {
-            content: [],
-            theme: { extend: {} }
-        };
-    </script>
 </body>
 </html>
