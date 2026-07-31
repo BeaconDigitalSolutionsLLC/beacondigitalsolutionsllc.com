@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple, reliable tools that keep your information in your own private iCloud — never our servers. Thrive helps people manage their finances responsibly, on Mac and iPhone, so they can focus on what matters most.">
+    <title>Beacon Digital Solutions | Privacy-First Tools for Families</title>
+    <link rel="canonical" href="https://beacondigitalsolutionsllc.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Beacon Digital Solutions">
+    <meta property="og:title" content="Beacon Digital Solutions | Privacy-First Tools for Families">
+    <meta property="og:description" content="Simple, reliable tools that keep your information in your own private iCloud — never our servers.">
+    <meta property="og:url" content="https://beacondigitalsolutionsllc.com/">
+    <meta property="og:image" content="https://beacondigitalsolutionsllc.com/images/Thrive/dashboard-iphone.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon-32x32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon-16x16.png?v=1">
+    <link rel="manifest" href="site.webmanifest?v=1">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .hero-bg { background: linear-gradient(90deg, #0a1729 0%, #1e2937 100%); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+    </style>
+    <!-- Shows an "Open in App Store" banner to iPhone visitors who don't have Thrive. -->
+    <meta name="apple-itunes-app" content="app-id=6779286706">
+    <!-- GoatCounter: cookieless, no personal data, no cross-site tracking.
+         Dashboard: beacondigitalsolutionsllc.goatcounter.com -->
+    <script data-goatcounter="https://beacondigitalsolutionsllc.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- HEADER -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+                <div>
+                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="text-cyan-400">Home</a>
+                <div class="relative group">
+                    <a href="products.html" class="hover:text-cyan-400 flex items-center gap-x-1">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            
+            <a href="products.html" 
+               class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-2.5 rounded-2xl text-sm items-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="products.html" class="hover:text-cyan-400">Products</a>
+            <a href="thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+            <a href="about.html" class="hover:text-cyan-400">About</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            <a href="products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+</header>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(at_center,#22d3ee_0%,transparent_70%)] opacity-10"></div>
+        
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-slate-800 text-emerald-400 text-xs font-medium tracking-widest px-4 h-8 rounded-3xl">
+                    <i class="fas fa-shield-alt"></i> YOUR DATA STAYS IN YOUR OWN PRIVATE iCLOUD
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl font-bold leading-none tracking-tighter">
+                    Tools that serve<br>people.<br>Not the other way around.
+                </h1>
+                
+                <p class="text-xl text-slate-400 max-w-lg">
+                    We build tools that keep your personal information on your own devices. Your data belongs to you. 
+                    We do not collect it, we do not see it, and we do not ask for it. This principle guides every tool we create.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="products.html" 
+                       class="bg-white text-slate-950 font-semibold px-8 py-4 rounded-3xl flex items-center gap-x-3 hover:scale-105 transition-all">
+                        <i class="fas fa-wallet"></i> See Our Tools
+                    </a>
+                    <a href="products.html" 
+                       class="border border-slate-400 hover:border-white font-semibold px-8 py-4 rounded-3xl flex items-center gap-x-3 hover:scale-105 transition-all">
+                        Explore Thrive
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-8 text-sm">
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-emerald-400 rounded-2xl flex items-center justify-center text-slate-950 font-bold text-xs ring-2 ring-slate-950">Free</div>
+                        <div class="w-8 h-8 bg-amber-400 rounded-2xl flex items-center justify-center text-slate-950 font-bold text-xs ring-2 ring-slate-950">Premium</div>
+                    </div>
+                    <p class="text-slate-400">Free core toolkit • Premium planning tools • 100% local</p>
+                </div>
+            </div>
+            
+            <!-- Hero screenshot — visible on every screen size: full card on
+                 desktop, a centered phone-width card on mobile so the first
+                 thing visitors see includes the product itself. -->
+            <div class="relative mt-10 md:mt-0">
+                <div class="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-3xl p-4 shadow-2xl max-w-[320px] md:max-w-sm mx-auto">
+                    <img src="images/Thrive/dashboard-iphone.png" alt="Welcome to Thrive on iPhone - private, faith-driven personal finance"
+                         class="w-full h-auto">
+                    <p class="text-center text-slate-400 text-sm font-medium mt-4">
+                        Manage your finances quickly, effectively, and safely — so you can spend more time with your family.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 flex gap-x-2">
+            <a href="#why" class="text-xs uppercase tracking-widest flex items-center gap-x-1 text-slate-400 hover:text-white">
+                WHY THIS MATTERS <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- WHY THIS MATTERS -->
+    <section id="why" class="max-w-screen-2xl mx-auto px-6 py-20 border-b border-slate-800">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-semibold tracking-tight mb-4">Your data is yours.<br>We never see it.</h2>
+            <p class="text-xl text-slate-400">Our products are built on a simple principle: the information you enter into our tools belongs to you. We do not track, collect, or have access to any of your personal data. We do not ask you to send it to us.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-3xl p-8">
+                <div class="text-4xl mb-4">🔒</div>
+                <h3 class="font-semibold text-xl mb-3">Data Stays With You</h3>
+                <p class="text-slate-400">Your records live on your devices and sync only through your own private iCloud — never our servers.</p>
+            </div>
+            <div class="bg-slate-900 rounded-3xl p-8">
+                <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                <h3 class="font-semibold text-xl mb-3">No Accounts Required</h3>
+                <p class="text-slate-400">You do not need to create an account with us or upload your information to use our tools.</p>
+            </div>
+            <div class="bg-slate-900 rounded-3xl p-8">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="font-semibold text-xl mb-3">Protection by Design</h3>
+                <p class="text-slate-400">We build this way because we believe in looking after one another. Protecting your information is a basic responsibility, not an optional feature.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEACON BUDGET TEASER -->
+    <section class="max-w-screen-2xl mx-auto px-6 py-20">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <div class="inline-flex items-center gap-x-2 bg-emerald-500/10 text-emerald-400 text-xs font-medium tracking-widest px-4 h-8 rounded-3xl mb-4">
+                    FIRST TOOL AVAILABLE
+                </div>
+                <div class="flex items-center gap-x-4 mb-4">
+                    <img src="images/Thrive/Thrive_logo_dark_128x128.png"
+                         alt="Thrive app icon"
+                         class="h-14 w-14 rounded-[22%] ring-1 ring-white/10 shadow-lg shadow-emerald-500/10 flex-shrink-0">
+                    <h2 class="text-4xl font-semibold tracking-tight">Thrive</h2>
+                </div>
+                <p class="text-xl text-slate-300 mb-6">Private budgeting for Mac and iPhone, kept in sync through your own iCloud. We never see your information and never ask for it.</p>
+                
+                <ul class="space-y-3 text-slate-300 mb-8">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span>Runs on your Mac and iPhone, synced through your private iCloud. Your records remain yours.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span>Free version for everyday use. Premium option for additional planning features.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span>Bring in your own records. No accounts required. We do not collect your data.</span></li>
+                </ul>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://apps.apple.com/app/id6779286706" class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-8 py-3.5 rounded-3xl inline-flex items-center gap-x-2">
+                        <i class="fab fa-apple"></i> Download on the App Store
+                    </a>
+                    <a href="thrive.html" class="border border-slate-400 hover:border-white px-8 py-3.5 rounded-3xl font-semibold inline-flex items-center gap-x-2">
+                        Learn more
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1">
+                <img src="images/Thrive/budget-iphone.png" alt="Thrive zero-based budget on iPhone - income planned down to the last cent"
+                     class="block mx-auto w-full max-w-[280px] h-auto" loading="lazy">
+                <div class="mt-4 bg-slate-900 rounded-3xl p-6 text-center border border-slate-800">
+                    <h3 class="text-xl font-semibold mb-2">Your data is yours.</h3>
+                    <p class="text-slate-400 text-sm mb-4">We build tools so that your information stays in your own private iCloud. We never see it and never ask for it.</p>
+                    <a href="#community" class="text-emerald-400 hover:text-emerald-300 font-medium text-sm">Join the community below →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY / NEWSLETTER -->
+    <section id="community" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800 bg-slate-900/50">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-sm font-bold uppercase tracking-widest px-6 py-2 rounded-full mb-6">
+                <i class="fas fa-users"></i> BUILDING IN PUBLIC
+            </div>
+            
+            <h2 class="text-4xl font-semibold mb-4">Stay close as we build tools that actually protect people.</h2>
+            <p class="text-xl text-slate-300 mb-8">
+                Receive occasional updates on our tools and resources for using technology in a responsible way.
+            </p>
+            
+            <form id="community-form" class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" 
+                       name="email" 
+                       id="community-email"
+                       placeholder="your@email.com" 
+                       required
+                       class="bg-slate-800 border border-slate-700 focus:border-emerald-400 rounded-3xl px-6 py-4 flex-1 outline-none text-slate-200">
+                <button type="submit" 
+                        id="community-btn"
+                        class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-8 py-4 rounded-3xl whitespace-nowrap transition-all">
+                    Join the Community
+                </button>
+            </form>
+            <p id="community-msg" class="text-sm mt-3 hidden"></p>
+
+            <script>
+                // COMMUNITY SIGNUP — posts to our backend so we own the records.
+                // For local testing: run PORT=5001 python3 app.py, then visit the site at http://localhost:8000
+                // When deployed: change the URL below to your live backend (e.g. https://your-backend.onrender.com/community/signup)
+                const COMMUNITY_ENDPOINT = 'http://localhost:5001/community/signup';
+
+                const form = document.getElementById('community-form');
+                const msg = document.getElementById('community-msg');
+                const btn = document.getElementById('community-btn');
+
+                if (form) {
+                    form.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = document.getElementById('community-email').value.trim();
+                        if (!email) return;
+
+                        btn.disabled = true;
+                        btn.textContent = 'Joining...';
+                        msg.classList.remove('hidden', 'text-emerald-400', 'text-red-400');
+                        msg.textContent = '';
+
+                        try {
+                            const res = await fetch(COMMUNITY_ENDPOINT, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ email, source: 'website_index' })
+                            });
+
+                            if (res.ok) {
+                                msg.classList.add('text-emerald-400');
+                                msg.textContent = 'Thank you — you are now on the list.';
+                                setTimeout(() => {
+                                    window.location.href = 'thank-you.html';
+                                }, 900);
+                            } else {
+                                throw new Error('Server error');
+                            }
+                        } catch (err) {
+                            msg.classList.add('text-red-400');
+                            msg.textContent = 'Could not submit right now. Email support@beacondigitalsolutionsllc.com instead.';
+                            btn.disabled = false;
+                            btn.textContent = 'Join the Community';
+                        }
+                    });
+                }
+            </script>
+            
+            <p class="text-xs text-slate-400 mt-6">Occasional updates • No spam • Unsubscribe anytime. We respect your inbox the same way we respect your data.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <a href="products.html" class="hover:text-cyan-400">Products</a>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tailwind Init -->
+    <script>
+        tailwind.config = {
+            content: [],
+            theme: { extend: {} }
+        };
+    </script>
+</body>
+</html>

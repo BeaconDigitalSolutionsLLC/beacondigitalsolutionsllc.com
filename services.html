@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beacon Digital Solutions offers deliverable-based solutions for small businesses in healthcare, manufacturing, retail, and professional services, delivering 62% time savings at a leading aerospace company.">
+    <meta name="keywords" content="Beacon Digital Solutions, process optimization, agile project delivery, transformation strategy, small businesses, Jupiter FL">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-88GV74L2RT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-88GV74L2RT');
+    </script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Beacon Digital Solutions - Services</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #003366;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ccc;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00A8E8;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .dropdown-caret {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #003366;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            font-size: 1em;
+            color: #fff;
+            text-align: left;
+        }
+        .dropdown-menu a:hover {
+            background: #00A8E8;
+        }
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('digital_transformation.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            filter: brightness(0.7);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .hero .logo {
+            max-width: 200px;
+            margin-bottom: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: none !important;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+            color: #fff !important;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        main {
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .services-section, .cta-section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        .cta-section {
+            min-height: 50vh;
+            position: relative;
+        }
+        .services-section h2 {
+            color: #003366;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+        }
+        .service {
+            margin-bottom: 30px;
+        }
+        .service i {
+            font-size: 50px;
+            color: #003366;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .service h3 {
+            color: #003366;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+        }
+        .service ul {
+            list-style-type: disc;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            padding-left: 40px;
+            text-align: left;
+            color: #333;
+        }
+        .service li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            background-color: #1A2A44;
+            color: #fff !important;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #0F1A2F;
+            transform: scale(1.05);
+        }
+        #header-cta.cta-button {
+            background-color: #00A8E8;
+            padding: 10px 20px;
+            font-size: 1.1em;
+        }
+        #header-cta.cta-button:hover {
+            background-color: #003366;
+            transform: scale(1.05);
+        }
+        .cta-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('cta-hero.jpg');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            filter: brightness(1);
+        }
+        .cta-section {
+            background-color: #f5f5f5;
+        }
+        .cta-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .cta-hero-content .cta-button {
+            padding: 16px 32px;
+            font-size: 1.3em;
+            background-color: #ff4500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-hero-content .cta-button:hover {
+            background-color: #e03e00;
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        footer .venture-text {
+            font-size: 0.6em;
+        }
+        footer p:not(.venture-text) {
+            font-size: 1em;
+        }
+        footer a {
+            color: #00A8E8;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer img {
+            width: 20px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .process-wrapper {
+            background: linear-gradient(135deg, #e6ecef 0%, #f0f4f8 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #d3d9df;
+        }
+        hr.services-divider {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .process-cta {
+            background-color: #00A8E8;
+            color: #fff !important;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .process-cta:hover {
+            background-color: #003366;
+            transform: scale(1.05);
+        }
+        .process-flow-image {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .process-flow-caption {
+            font-size: 1em;
+            color: #333;
+            margin: 10px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #003366;
+                padding: 20px;
+                gap: 15px;
+                box-sizing: border-box;
+            }
+            nav.active {
+                display: flex;
+            }
+            .dropdown {
+                position: relative;
+            }
+            .dropdown-menu {
+                position: static;
+                background: #004080;
+                box-shadow: none;
+                margin-left: 20px;
+            }
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            .dropdown-toggle i {
+                transform: rotate(0);
+            }
+            .dropdown.active .dropdown-toggle i {
+                transform: rotate(180deg);
+            }
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 10px;
+                align-items: center;
+            }
+            #header-cta.cta-button {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            .hero {
+                min-height: 40vh;
+                padding: 20px 0;
+            }
+            .hero-background {
+                background-position: center center;
+                width: 100%;
+            }
+            .hero-content {
+                position: relative;
+                top: 0;
+                transform: none;
+                padding: 15px;
+            }
+            .hero .logo {
+                max-width: 160px;
+                margin-bottom: 10px;
+            }
+            .hero h1 {
+                font-size: 1.8em;
+                margin: 10px 0;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .services-section, .cta-section {
+                padding: 20px;
+            }
+            .cta-section {
+                min-height: 35vh;
+            }
+            .services-section h2 {
+                font-size: 1.5em;
+            }
+            .service i {
+                font-size: 40px;
+            }
+            .service h3 {
+                font-size: 1.3em;
+            }
+            .service p {
+                font-size: 1em;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            .service ul {
+                padding-left: 30px;
+            }
+            .process-flow-image {
+                max-width: 100%;
+                margin: 10px auto;
+            }
+            .process-flow-caption {
+                font-size: 0.9em;
+                padding: 0 10px;
+            }
+            .process-wrapper {
+                padding: 15px;
+            }
+            footer {
+                padding: 15px 0;
+                font-size: 0.8em;
+            }
+            footer .venture-text {
+                font-size: 0.55em;
+            }
+            footer p:not(.venture-text) {
+                font-size: 0.9em;
+            }
+            footer img {
+                width: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+                <div>
+                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <div class="relative group">
+                    <a href="products.html" class="hover:text-cyan-400 flex items-center gap-x-1">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <a href="products.html" 
+               class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-2.5 rounded-2xl text-sm">See Our Tools</a>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="products.html" class="hover:text-cyan-400">Products</a>
+            <a href="thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+            <a href="about.html" class="hover:text-cyan-400">About</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            <a href="products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+</header>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions services logo" class="logo">
+            <h1>Our Services</h1>
+            <p>Empowering Small Businesses to Outpace the Giants</p>
+        </div>
+    </div>
+    <main>
+        <div class="max-w-3xl mx-auto px-6 pt-8 text-center">
+            <div class="inline-block bg-amber-500/10 text-amber-400 text-xs px-4 py-1 rounded-full mb-3">NOTE</div>
+            <p class="text-slate-400">Beacon Digital Solutions has shifted from consulting services to building privacy-first, on-device products for families. The pages below reflect earlier work. Our current focus is <a href="thrive.html" class="text-white underline">Thrive</a> and future tools in the same spirit.</p>
+        </div>
+        <section class="services-section">
+            <h2>Previous Consulting Work</h2>
+            <div class="process-wrapper">
+                <div class="service">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Process Optimization</h3>
+                    <p>Streamline operations to outpace competitors and scale efficiently. Our four-step process—Analyze, Document, Recommend & Pilot, Measure & Scale—delivers a prioritized roadmap for efficiency, boosting productivity by up to 30%, as shown in our <a href="https://beacondigitalsolutionsllc.com/case-studies.html">aerospace case study</a>.</p>
+                    <h4>Deliverables</h4>
+                    <ul>
+                        <li>Business/process audit report prioritizing high-value, low-effort processes</li>
+                        <li>Tooling audit report mapping tools, functions, and cost-effective recommendations</li>
+                        <li>Visual process maps for team alignment</li>
+                        <li>Tailored recommendations with pilot plans</li>
+                        <li>Standard Operating Procedures (SOPs) for consistent operations</li>
+                        <li>Data-driven KPI dashboards</li>
+                    </ul>
+                    <a href="https://beacondigitalsolutionsllc.com/process-optimization.html" class="process-cta">Learn More About Process Optimization</a>
+                </div>
+            </div>
+            <hr class="services-divider">
+            <div class="service">
+                <i class="fas fa-tasks"></i>
+                <h3>Agile Project Delivery</h3>
+                <p>Accelerate digital projects with Agile methodologies, delivering precise, measurable outcomes to reclaim market share. Our Certified Scrum Product Owner-led approach reduces delivery time by 25% (Agile Alliance), empowering your team with training and tools to thrive.</p>
+                <h4>Deliverables</h4>
+                <ul>
+                    <li>Agile project roadmap with sprint plans</li>
+                    <li>Automated workflows for efficiency</li>
+                    <li>Performance dashboards for real-time tracking</li>
+                    <li>Product Owner, Scrum Master, and Project Management coaching</li>
+                </ul>
+                <a href="https://beacondigitalsolutionsllc.com/agile-project-delivery.html" class="process-cta">Learn More About Agile Project Delivery</a>
+            </div>
+            <hr class="services-divider">
+            <div class="service">
+                <i class="fas fa-compass"></i>
+                <h3>Transformation Strategy Consulting</h3>
+                <p>Build a practical, growth-focused roadmap to make your small business more efficient and competitive. Our tailored strategies and training improve agility by 30% (McKinsey), helping you scale smartly and strengthen your community impact.</p>
+                <h4>Deliverables</h4>
+                <ul>
+                    <li>Growth roadmap with prioritized initiatives</li>
+                    <li>Data governance frameworks for streamlined operations</li>
+                    <li>Team training programs for strategy adoption</li>
+                    <li>Change management plans for smooth transitions</li>
+                    <li>KPI dashboards to track progress</li>
+                </ul>
+                <a href="https://beacondigitalsolutionsllc.com/transformation-strategy-consulting.html" class="process-cta">Learn More About Transformation Strategy</a>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-background"></div>
+            <div class="cta-hero-content">
+                <a href="https://beacondigitalsolutionsllc.com/contact.html" class="cta-button">Contact Us Today</a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <a href="products.html" class="hover:text-cyan-400">Products</a>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        document.querySelector('.dropdown-caret').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const dropdown = this.parentElement.parentElement;
+            dropdown.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

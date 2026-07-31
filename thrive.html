@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Private zero-based budgeting for Mac &amp; iPhone, built on Christian stewardship. No bank logins, no tracking — your data stays in your own iCloud. Free app, 7-day Premium trial.">
+    <title>Thrive: Private Zero-Based Budgeting App for Mac &amp; iPhone</title>
+    <link rel="canonical" href="https://beacondigitalsolutionsllc.com/thrive.html">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Beacon Digital Solutions">
+    <meta property="og:title" content="Thrive: Private Zero-Based Budgeting App for Mac &amp; iPhone">
+    <meta property="og:description" content="Nothing left unplanned. No bank logins, no tracking — your data stays in your own iCloud. Free core app; Premium planning tools with a 7-day free trial.">
+    <meta property="og:url" content="https://beacondigitalsolutionsllc.com/thrive.html">
+    <meta property="og:image" content="https://beacondigitalsolutionsllc.com/images/Thrive/thrive-social-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thrive: Private Zero-Based Budgeting App for Mac &amp; iPhone">
+    <meta name="twitter:description" content="Nothing left unplanned. No bank logins, no tracking — your data stays in your own iCloud.">
+    <meta name="twitter:image" content="https://beacondigitalsolutionsllc.com/images/Thrive/thrive-social-card.png">
+
+    <!-- Structured data: the app -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Thrive: Budget Tool",
+      "operatingSystem": "macOS 14.0 or later, iOS 18.0 or later",
+      "applicationCategory": "FinanceApplication",
+      "description": "Private zero-based budgeting for Mac and iPhone built on Christian stewardship. Data stays on device and in the user's own iCloud — no company servers, no accounts, no tracking.",
+      "url": "https://beacondigitalsolutionsllc.com/thrive.html",
+      "image": "https://beacondigitalsolutionsllc.com/images/Thrive/thrive-social-card.png",
+      "installUrl": "https://apps.apple.com/app/id6779286706",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free core app. Optional Premium subscription $8/month with a 7-day free trial."
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Beacon Digital Solutions LLC",
+        "url": "https://beacondigitalsolutionsllc.com"
+      }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon-32x32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon-16x16.png?v=1">
+    <link rel="manifest" href="site.webmanifest?v=1">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Distribution is App-Store-only: one universal listing for Mac + iPhone. -->
+    <script>
+      window.APP_STORE_URL = 'https://apps.apple.com/app/id6779286706';
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+        .hero-bg { background: linear-gradient(90deg, #0a1729 0%, #1e2937 100%); }
+        .section-header { font-size: 2.25rem; line-height: 1.1; font-weight: 600; letter-spacing: -0.025em; }
+
+        /* Screenshot carousels. Native scroll-snap does the work: real swipe on
+           touch, trackpad scroll on desktop, and it degrades to a plain scroller
+           if JS never runs. The buttons and dots below are enhancements. */
+        .snap-track {
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overscroll-behavior-x: contain;
+        }
+        .snap-track::-webkit-scrollbar { display: none; }
+        .snap-slide { scroll-snap-align: center; }
+        .dot { transition: all .25s ease; }
+        .dot[aria-current="true"] { background:#34d399; width:1.6rem; }
+        @media (prefers-reduced-motion: reduce) { .snap-track { scroll-behavior: auto; } }
+    </style>
+    <!-- GoatCounter: cookieless, no personal data, no cross-site tracking.
+         Dashboard: beacondigitalsolutionsllc.goatcounter.com -->
+    <script data-goatcounter="https://beacondigitalsolutionsllc.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- HEADER -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+                <div>
+                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <div class="relative group">
+                    <a href="products.html" class="hover:text-cyan-400 flex items-center gap-x-1">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="flex items-center gap-x-3">
+                <a href="thrive.html#download" 
+                   class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-5 py-2 rounded-2xl text-sm items-center gap-x-2">
+                    <i class="fas fa-download"></i> <span class="hidden sm:inline">Download Free</span>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="products.html" class="hover:text-cyan-400">Products</a>
+            <a href="thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+            <a href="about.html" class="hover:text-cyan-400">About</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            <a href="products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+</header>
+
+    <!-- HERO -->
+    <section class="hero-bg pt-16 pb-20">
+        <!-- Narrower than the rest of the page on purpose: at screen-2xl the
+             1fr copy column is ~1010px while the copy itself caps at 768px,
+             which opened a wide gap between the headline and the slider. -->
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- min-w-0 on both columns: a grid item defaults to min-width:auto, so
+               the single-column mobile track sized itself to the carousel's 420px
+               instead of the 327px viewport, pushing the whole hero off-screen. -->
+          <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] gap-12 items-center">
+            <div class="max-w-3xl min-w-0">
+                <img src="images/Thrive/Thrive_logo_dark_256x256.png"
+                     alt="Thrive app icon"
+                     class="h-20 w-20 md:h-24 md:w-24 rounded-[22%] ring-1 ring-white/10 shadow-2xl shadow-emerald-500/10 mb-7">
+
+                <div class="inline-flex flex-wrap items-center gap-x-2 bg-emerald-500/10 text-emerald-400 text-[10px] sm:text-xs font-medium tracking-[1.5px] sm:tracking-[2px] px-4 py-2 rounded-3xl mb-6 max-w-full">
+                    APP PRIVACY LABEL: DATA NOT COLLECTED • MAC + IPHONE • YOUR iCLOUD ONLY
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                    Thrive.<br>
+                    Faithful with<br>
+                    what you've been given.
+                </h1>
+
+                <p class="text-lg sm:text-2xl text-slate-300 max-w-2xl mb-10">
+                    Private zero-based budgeting for your Mac and iPhone. Nothing is left unplanned, one budget is shared with your spouse, and it all syncs through your own iCloud — nothing ever passes through us.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://apps.apple.com/app/id6779286706"
+                       class="bg-white hover:bg-slate-100 text-slate-950 font-semibold px-10 py-4 rounded-3xl text-lg flex items-center gap-x-3 transition-all">
+                        <i class="fab fa-apple text-2xl"></i> Download on the App Store
+                    </a>
+                    <a href="#premium"
+                       class="border border-white/60 hover:bg-white/5 font-semibold px-10 py-4 rounded-3xl text-lg flex items-center gap-x-3 transition-all">
+                        See Premium features
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-slate-400">Free forever for the core toolkit. Premium unlocks deeper planning tools for $8/mo — with a 7-day free trial in-app.</p>
+            </div>
+
+            <!-- iPhone carousel -->
+            <div class="w-full min-w-0 max-w-[420px] mx-auto lg:mx-0">
+<div class="relative" data-carousel>
+          <div id="phone-carousel" class="snap-track flex gap-6 overflow-x-auto scroll-smooth pb-2"
+               tabindex="0" role="group" aria-roledescription="carousel" aria-label="Thrive on iPhone">
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="1 of 6">
+              <img src="images/Thrive/dashboard-iphone.png" alt="Thrive dashboard on iPhone — priorities, cash flow and goals on one screen, with no bank account linked" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">PRIVACY BY DESIGN</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">No bank linking. Ever.</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">We never ask for your bank password. Our App Privacy label reads “Data Not Collected.”</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="2 of 6">
+              <img src="images/Thrive/transactions-iphone.png" alt="Thrive transactions on iPhone — purchases arriving already categorized" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">NO DATA ENTRY</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">Already sorted before you look</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">Import a file, or let Thrive read the transaction alerts your bank already emails you.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="3 of 6">
+              <img src="images/Thrive/budget-iphone.png" alt="Thrive zero-based budget on iPhone" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">ZERO-BASED</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">Nothing left unplanned</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">Income planned to the last cent — and the daily pace that keeps you on it.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="4 of 6">
+              <img src="images/Thrive/emergency-fund-iphone.png" alt="Thrive emergency fund on iPhone, shared with a spouse" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">HOUSEHOLD SHARING</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">One plan. Both of you.</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">Share the whole picture with your spouse — two Apple IDs, no shared password.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="5 of 6">
+              <img src="images/Thrive/children-iphone.png" alt="Thrive children's savings on iPhone" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">COLLEGE SAVINGS</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">Fund their future</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">Every child, every 529, and what it takes to get there before they start.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[240px] sm:w-[264px]"
+                    role="group" aria-roledescription="slide" aria-label="6 of 6">
+              <img src="images/Thrive/retirement-iphone.png" alt="Thrive retirement projection on iPhone" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-4 text-center px-2">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">RETIREMENT</span>
+                <h3 class="mt-3 text-xl font-semibold text-white">See where you'll land</h3>
+                <p class="mt-1.5 text-sm text-slate-400 leading-relaxed">Real holdings and real returns, against the age you actually picked.</p>
+              </figcaption>
+            </figure>
+          </div>
+          <button type="button" data-prev aria-label="Previous"
+                  class="hidden md:flex absolute -left-4 top-1/3 h-11 w-11 items-center justify-center rounded-full bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-emerald-400/50 transition">
+            <i class="fas fa-chevron-left text-sm"></i>
+          </button>
+          <button type="button" data-next aria-label="Next"
+                  class="hidden md:flex absolute -right-4 top-1/3 h-11 w-11 items-center justify-center rounded-full bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-emerald-400/50 transition">
+            <i class="fas fa-chevron-right text-sm"></i>
+          </button>
+          <div data-dots class="flex justify-center gap-2 mt-6" role="tablist" aria-label="Choose slide"></div>
+        </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- TRUST / PRIVACY BAR -->
+    <div class="border-b border-slate-800 bg-slate-900/60">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-slate-400">
+            <div class="flex items-center gap-x-2"><i class="fas fa-shield-alt text-emerald-400"></i> <span>Your data stays in your own private iCloud</span></div>
+            <div class="flex items-center gap-x-2"><i class="fas fa-lock text-emerald-400"></i> <span>We never see or store your information</span></div>
+            <div class="flex items-center gap-x-2"><i class="fas fa-user-secret text-emerald-400"></i> <span>No accounts. No tracking. No data collection.</span></div>
+            <div class="flex items-center gap-x-2"><i class="fas fa-people-roof text-emerald-400"></i> <span>One budget, shared with your spouse</span></div>
+            <div class="flex items-center gap-x-2"><i class="fas fa-mobile-screen text-emerald-400"></i> <span>Mac &amp; iPhone, always in sync</span></div>
+        </div>
+    </div>
+
+    <!-- CHECK THE LABEL — the verifiable privacy differentiator -->
+    <section class="max-w-screen-2xl mx-auto px-6 pt-16">
+        <div class="max-w-3xl mx-auto bg-slate-900 border border-emerald-400/30 rounded-3xl p-8 text-center">
+            <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-2">Don't take our word for it</p>
+            <h2 class="text-3xl font-semibold mb-3">Go check the label.</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto">Every app on the App Store carries an Apple-verified <span class="text-white font-medium">App Privacy</span> label. Most budgeting apps' labels list data <em>used to track you</em> and data <em>linked to you</em> — your finances are their product. Thrive's label reads <span class="text-emerald-400 font-semibold">"Data Not Collected."</span> Not minimized. Not anonymized. <span class="text-white font-medium">Not collected.</span></p>
+            <a href="https://apps.apple.com/app/id6779286706" class="inline-block mt-5 text-emerald-400 hover:text-emerald-300 font-medium">See Thrive's privacy label on the App Store →</a>
+        </div>
+    </section>
+
+
+    <!-- HOW TO START — the real first-run flow, mirroring the in-app wizard -->
+    <section class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="max-w-3xl mb-12">
+            <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-2">From zero to a budget</p>
+            <h2 class="section-header mb-4">Your first budget, in about fifteen minutes</h2>
+            <p class="text-lg text-slate-400">No sign-up, no account, and nothing to connect. Thrive walks you through this the first time you open it — here is the whole thing, start to finish.</p>
+        </div>
+        <ol class="max-w-4xl">
+            <li class="relative flex gap-5 sm:gap-7">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 font-bold">1</span>
+                <span class="hidden sm:block w-px flex-1 bg-gradient-to-b from-emerald-400/30 to-transparent mt-3" aria-hidden="true"></span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-x-3">
+                  <i class="fas fa-file-arrow-down text-emerald-400/80 text-base"></i> Export a CSV from your bank
+                </h3>
+                <p class="mt-2 text-slate-400 leading-relaxed max-w-2xl">Log in to your bank, choose “Export” or “Download transactions,” and pick CSV. One account is enough to start. <span class='text-emerald-400 font-medium'>That is the entire connection — no bank linking, ever, and no password to hand over.</span></p>
+              </div>
+            </li>
+            <li class="relative flex gap-5 sm:gap-7">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 font-bold">2</span>
+                <span class="hidden sm:block w-px flex-1 bg-gradient-to-b from-emerald-400/30 to-transparent mt-3" aria-hidden="true"></span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-x-3">
+                  <i class="fas fa-wand-magic-sparkles text-emerald-400/80 text-base"></i> Drop it into Thrive
+                </h3>
+                <p class="mt-2 text-slate-400 leading-relaxed max-w-2xl">Thrive reads the file and sorts the spending into categories on the way in. <span class='text-emerald-400 font-medium'>Most of it is already tagged before you look</span> — you are reviewing, not typing.</p>
+              </div>
+            </li>
+            <li class="relative flex gap-5 sm:gap-7">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 font-bold">3</span>
+                <span class="hidden sm:block w-px flex-1 bg-gradient-to-b from-emerald-400/30 to-transparent mt-3" aria-hidden="true"></span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-x-3">
+                  <i class="fas fa-envelope-open-text text-emerald-400/80 text-base"></i> Connect your email
+                </h3>
+                <p class="mt-2 text-slate-400 leading-relaxed max-w-2xl">Let Thrive read the transaction alerts your bank already emails you, so spending stays current all month instead of only when you remember to export. Works with Gmail, iCloud, Outlook, Yahoo, Fastmail, AOL — any IMAP inbox. This is what keeps the whole thing effortless: without it you are back to exporting a CSV by hand every month.</p>
+              </div>
+            </li>
+            <li class="relative flex gap-5 sm:gap-7">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 font-bold">4</span>
+                <span class="hidden sm:block w-px flex-1 bg-gradient-to-b from-emerald-400/30 to-transparent mt-3" aria-hidden="true"></span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-x-3">
+                  <i class="fas fa-sliders text-emerald-400/80 text-base"></i> Make the categories yours
+                </h3>
+                <p class="mt-2 text-slate-400 leading-relaxed max-w-2xl">Rename, move, or add categories and the parent groups that hold them. <span class='text-emerald-400 font-medium'>Every merchant you tag is remembered</span>, so the same store sorts itself next time. A few minutes here is what makes every later month automatic.</p>
+              </div>
+            </li>
+            <li class="relative flex gap-5 sm:gap-7">
+              <div class="flex flex-col items-center shrink-0">
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 font-bold">5</span>
+                <span class="hidden sm:block w-px flex-1 bg-gradient-to-b from-emerald-400/30 to-transparent mt-3" aria-hidden="true"></span>
+              </div>
+              <div class="pb-10">
+                <h3 class="text-xl font-semibold text-white flex items-center gap-x-3">
+                  <i class="fas fa-people-roof text-emerald-400/80 text-base"></i> Get your first budget — and share it
+                </h3>
+                <p class="mt-2 text-slate-400 leading-relaxed max-w-2xl">Thrive drafts a zero-based budget from your real numbers, so every dollar of income has a job and the month balances to zero. <span class='text-emerald-400 font-medium'>Invite your spouse and you are both looking at the same plan</span> — two Apple IDs, no shared password.</p>
+              </div>
+            </li>
+        </ol>
+        <div class="max-w-4xl mt-2 rounded-3xl border border-emerald-400/25 bg-emerald-500/5 p-6 sm:p-8">
+            <p class="text-slate-300"><span class="font-semibold text-white">After that it mostly runs itself.</span> New spending arrives categorized from your email scan, recurring bills are set aside automatically, and the budget rolls forward each month — you adjust rather than rebuild.</p>
+        </div>
+    </section>
+
+    <!-- MAC CAROUSEL -->
+    <div class="max-w-screen-2xl mx-auto px-6 py-16 text-center">
+        <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-2">The same budget on the big screen</p>
+        <h2 class="section-header mb-3">A full, native Mac app</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">Not a website in a wrapper — a real Mac app for the deep work: statement imports, retirement scenarios, mortgage payoff, and the YTD review. Swipe or use the arrows.</p>
+        <div class="relative" data-carousel>
+          <div id="mac-carousel" class="snap-track flex gap-8 overflow-x-auto scroll-smooth pb-2"
+               tabindex="0" role="group" aria-roledescription="carousel" aria-label="Thrive on Mac">
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="1 of 7">
+              <img src="images/Thrive/mac-dashboard.png" alt="Thrive dashboard on Mac" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">PRIVACY BY DESIGN</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">No bank linking. Ever.</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">We never ask for your bank password. Our App Privacy label reads “Data Not Collected.”</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="2 of 7">
+              <img src="images/Thrive/mac-transactions.png" alt="Thrive transactions on Mac — already categorized" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">NO DATA ENTRY</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">Already sorted before you look</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">Import a file, or let Thrive read the transaction alerts your bank already emails you.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="3 of 7">
+              <img src="images/Thrive/mac-budget.png" alt="Thrive zero-based budget on Mac" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">ZERO-BASED</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">Nothing left unplanned</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">Give your income a job down to the last cent, and hold the daily pace.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="4 of 7">
+              <img src="images/Thrive/mac-emergency-fund.png" alt="Thrive emergency fund on Mac, shared with a spouse" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">HOUSEHOLD SHARING</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">One plan. Both of you.</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">Two Apple IDs, no shared password, no account to create.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="5 of 7">
+              <img src="images/Thrive/mac-retirement.png" alt="Thrive retirement planning on Mac" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">RETIREMENT</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">See exactly where you'll land</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">Real holdings and returns, projected against the age you want to stop.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="6 of 7">
+              <img src="images/Thrive/mac-mortgage.png" alt="Thrive real estate and mortgage payoff on Mac" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">REAL ESTATE</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">Watch the mortgage shrink</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">Equity, payoff date, and what one extra payment a month really buys.</p>
+              </figcaption>
+            </figure>
+            <figure class="snap-slide shrink-0 w-[86vw] max-w-[1000px]"
+                    role="group" aria-roledescription="slide" aria-label="7 of 7">
+              <img src="images/Thrive/mac-ytd-review.png" alt="Thrive year-to-date review on Mac" class="w-full h-auto" loading="lazy" decoding="async">
+              <figcaption class="mt-5 text-center max-w-2xl mx-auto px-4">
+                <span class="inline-block text-[10px] font-bold tracking-[2px] text-emerald-400 bg-emerald-500/10 border border-emerald-400/25 rounded-full px-3 py-1">YTD REVIEW</span>
+                <h3 class="mt-3 text-2xl font-semibold text-white">The whole year, on one page</h3>
+                <p class="mt-2 text-slate-400 leading-relaxed">What came in, what went out, what you kept — and where it went.</p>
+              </figcaption>
+            </figure>
+          </div>
+          <button type="button" data-prev aria-label="Previous"
+                  class="hidden md:flex absolute left-2 top-1/3 h-12 w-12 items-center justify-center rounded-full bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-emerald-400/50 transition">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button type="button" data-next aria-label="Next"
+                  class="hidden md:flex absolute right-2 top-1/3 h-12 w-12 items-center justify-center rounded-full bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-emerald-400/50 transition">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div data-dots class="flex justify-center gap-2 mt-8" role="tablist" aria-label="Choose slide"></div>
+        </div>
+    </div>
+
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- FREE -->
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-10 flex flex-col">
+                <div>
+                    <div class="uppercase tracking-[1.5px] text-xs font-semibold text-emerald-400 mb-2">Always Free</div>
+                    <h3 class="text-4xl font-semibold tracking-tight">Free</h3>
+                    <p class="text-2xl mt-1 text-slate-300">$0 <span class="text-base text-slate-500">— forever</span></p>
+                </div>
+                
+                <div class="my-8 border-t border-slate-800"></div>
+                
+                <ul class="space-y-4 text-slate-300 flex-1">
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Zero-based budgeting with parent categories and quick entry</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Transactions, imports (CSV, OFX, QFX, PDF), watch folders</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Dashboard, Emergency Fund, and core budgeting tools</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Mac &amp; iPhone, kept in sync through your own encrypted iCloud</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>7-day free trial of Premium features inside the app</span></li>
+                </ul>
+                
+                <a href="#download" class="mt-10 block text-center bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold py-4 rounded-3xl text-lg">
+                    Download Free
+                </a>
+                <p class="text-center text-xs text-slate-500 mt-3">Free on the App Store • Upgrade to Premium anytime</p>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="bg-slate-900 border border-emerald-400/40 rounded-3xl p-10 flex flex-col relative">
+                <div class="absolute top-8 right-8 bg-emerald-400 text-slate-950 text-xs font-bold px-4 py-1 rounded-full">RECOMMENDED FOR MOST FAMILIES</div>
+                
+                <div>
+                    <div class="uppercase tracking-[1.5px] text-xs font-semibold text-amber-400 mb-2">For deeper planning</div>
+                    <h3 class="text-4xl font-semibold tracking-tight">Premium</h3>
+                    <p class="text-2xl mt-1 text-slate-300">$8/mo <span class="text-base text-slate-500">— billed monthly, cancel anytime</span></p>
+                </div>
+                
+                <div class="my-8 border-t border-slate-800"></div>
+                
+                <ul class="space-y-4 text-slate-300 flex-1">
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Everything in Free, plus:</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span><span class="font-medium text-white">NEW — Household Sharing:</span> one budget with your spouse, on their own Apple ID. Same view, same numbers — and joining is free for them.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span><span class="font-medium text-white">NEW — Children's savings:</span> every account type per child, with growth projections and a plan to hit the goal</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Retirement projections with scenario planning</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Real Estate / mortgage payoff tools</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1 w-4"></i> <span>Year-to-date review that answers the questions that matter</span></li>
+                </ul>
+                
+                <div class="mt-10">
+                    <a href="#subscribe" class="block text-center bg-white hover:bg-slate-100 text-slate-950 font-semibold py-4 rounded-3xl text-lg">
+                        How to get Premium
+                    </a>
+                    <p class="text-center text-xs text-slate-500 mt-3">Unlocked inside the app. We never see your information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH TO DATA -->
+    <section class="max-w-screen-2xl mx-auto px-6 py-16 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-header text-center mb-3">Our approach to your data</h2>
+            <p class="text-center text-xl text-slate-400 mb-12">This is the foundation of every tool we create.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-laptop-house text-emerald-400"></i> Your data stays with you</h4>
+                        <p class="text-slate-400">Your financial information lives on your devices and syncs only through your own private iCloud — Apple's encrypted database that we cannot read. There's no Beacon server: we never receive, store, or have access to any of it.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-key text-emerald-400"></i> We do not ask for your data</h4>
+                        <p class="text-slate-400">You do not need to create an account with us. You do not need to upload your information. Optional features such as local import keep everything under your control on your device.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-microchip text-emerald-400"></i> No tracking of any kind</h4>
+                        <p class="text-slate-400">Our tools do not track your activity, build profiles, or send data back to us. This is a deliberate design choice, not a setting you have to enable.</p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-house-user text-emerald-400"></i> Built for households</h4>
+                        <p class="text-slate-400">Household Sharing is here: invite your spouse to the same budget from their own Apple ID, peer-to-peer through iCloud. Same view, same numbers, no shared login — and it follows the same rule as everything else: we never see your data.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-file-import text-emerald-400"></i> You bring your own records</h4>
+                        <p class="text-slate-400">Import files from your own sources when you want to. We have no visibility into the data you choose to work with.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 flex items-center gap-2"><i class="fas fa-users text-emerald-400"></i> Protection by design</h4>
+                        <p class="text-slate-400">We build this way because we believe in looking after the people who use our tools. Your data is yours. We treat it that way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD + SUBSCRIBE SECTION -->
+    <section id="download" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800 bg-slate-900">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="section-header mb-3">Ready to get started?</h2>
+            <p class="text-xl text-slate-300 mb-10">Download the free app, then unlock Premium for $8/mo whenever you're ready. Either way, your data stays in your own private iCloud — never on our servers.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://apps.apple.com/app/id6779286706"
+                   class="inline-flex items-center justify-center gap-x-3 bg-white text-slate-950 font-semibold px-10 py-5 rounded-3xl text-lg hover:bg-slate-100">
+                    <i class="fab fa-apple text-2xl"></i>
+                    <span>Download on the App Store</span>
+                </a>
+                <a href="#subscribe"
+                   class="inline-flex items-center justify-center gap-x-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-950 font-semibold px-10 py-5 rounded-3xl text-lg transition-all">
+                    Unlock Premium — $8/mo
+                </a>
+            </div>
+            <p class="text-xs text-slate-500 mt-4">One app for Mac (macOS 14 Sonoma or later) and iPhone (iOS 18+) — download it on each device from the App Store, and the same iCloud account keeps them in sync.</p>
+
+            <!-- After downloading: 3-step "how Premium works" so beta users aren't lost -->
+            <div class="mt-12 grid sm:grid-cols-3 gap-4 text-left">
+                <div class="bg-slate-950/40 border border-slate-800 rounded-2xl p-5">
+                    <div class="text-emerald-400 font-bold mb-1">1. Download &amp; open</div>
+                    <p class="text-sm text-slate-400">Install the free app. Every core budgeting feature works immediately — no account needed.</p>
+                </div>
+                <div class="bg-slate-950/40 border border-slate-800 rounded-2xl p-5">
+                    <div class="text-emerald-400 font-bold mb-1">2. Open Settings → Premium</div>
+                    <p class="text-sm text-slate-400">When you want the deeper planning tools, head to the Premium section in the app.</p>
+                </div>
+                <div class="bg-slate-950/40 border border-slate-800 rounded-2xl p-5">
+                    <div class="text-emerald-400 font-bold mb-1">3. Subscribe ($8/mo)</div>
+                    <p class="text-sm text-slate-400">Tap Subscribe — billing is handled securely by Apple, and the planning tools unlock instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO GET PREMIUM (in-app via the App Store) -->
+    <section id="subscribe" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-semibold mb-3">How to get Premium</h3>
+                <p class="text-xl text-slate-300">Premium is $8/month, billed monthly — cancel anytime. You unlock it right inside the app, and your information stays in your own private iCloud.</p>
+            </div>
+
+            <!-- In-app subscription card -->
+            <div class="bg-slate-900 border border-emerald-400/30 rounded-3xl p-10 mb-8 text-center">
+                <div class="text-5xl font-semibold mb-1">$8<span class="text-2xl text-slate-400">/mo</span></div>
+                <div class="text-emerald-400 mb-6">billed monthly · cancel anytime</div>
+
+                <ol class="text-left max-w-md mx-auto space-y-3 text-slate-300 mb-8">
+                    <li class="flex gap-3"><span class="text-emerald-400 font-bold">1.</span> Download the free app (button below).</li>
+                    <li class="flex gap-3"><span class="text-emerald-400 font-bold">2.</span> Open it and go to <span class="text-slate-100 font-medium">Settings → Premium</span>.</li>
+                    <li class="flex gap-3"><span class="text-emerald-400 font-bold">3.</span> Tap <span class="text-slate-100 font-medium">Subscribe</span> — billing is handled securely by Apple. Premium unlocks instantly.</li>
+                </ol>
+
+                <a href="#download" class="inline-block bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-12 py-4 rounded-3xl text-lg">
+                    Get the free app to start
+                </a>
+                <p class="text-xs text-slate-500 mt-4">No separate account needed. Billing runs through your Apple ID; we never see or store your card details.</p>
+            </div>
+
+            <!-- Web subscription: coming soon -->
+            <div class="bg-slate-900/60 rounded-3xl p-8 text-center">
+                <p class="text-slate-300"><span class="text-emerald-400 font-semibold">Coming soon:</span> subscribe to Premium directly on the web. For now, Premium is available right inside the app.</p>
+                <p class="text-sm text-slate-500 mt-3">Questions? Email <a href="mailto:support@beacondigitalsolutionsllc.com" class="text-emerald-400 hover:text-emerald-300">support@beacondigitalsolutionsllc.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (matches the FAQPage structured data below) -->
+    <section id="faq" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="section-header text-center mb-10">Common questions</h2>
+            <div class="space-y-4">
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">Is Thrive really free? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">Yes. The core zero-based budgeting toolkit — budgets, transactions, imports, dashboard — is free forever, with no account and no ads. Premium ($8/mo) adds retirement, education, and real-estate planning tools, with a 7-day free trial in-app.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">Does Thrive connect to my bank? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">No — by design. You never hand over bank credentials. Import transactions from the CSV, PDF, or OFX files your bank already gives you, or connect your inbox and let Thrive read the transaction-alert emails your bank already sends you. Nothing about your accounts ever touches our servers, because we don't have any.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">Where is my financial data stored? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">On your device, and synced between your Mac and iPhone through your own private iCloud (Apple's encrypted CloudKit). There is no company server, no account with us, and no analytics or tracking of any kind.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">What does "zero-based budgeting" mean? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">Each dollar of income gets assigned a job — giving, bills, savings, spending — until income minus assignments equals zero. It's the proven method behind envelope budgeting, and it's the fastest way to know exactly where your money goes.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">How is Thrive different from other budgeting apps? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">Four things. <span class="text-slate-200 font-medium">Privacy:</span> most budgeting apps link your bank and hold your finances on their servers — Thrive never does either; your data stays on your Apple devices and your private iCloud, and our App Privacy label reads "Data Not Collected." <span class="text-slate-200 font-medium">Family:</span> Household Sharing gives you and your spouse one budget from separate Apple IDs — no shared login, and joining is free. <span class="text-slate-200 font-medium">Native:</span> a real Mac app and iPhone app, not a website in a wrapper. <span class="text-slate-200 font-medium">Stewardship:</span> Giving/Tithe is a first-class category, and the tools treat money as something you manage faithfully, not just optimize.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">Can my spouse and I share one budget? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">Yes — Household Sharing is built in. Create a household in Settings, send your spouse an invite link, and they join from their own Apple ID. You both see and edit the same budget, synced peer-to-peer through iCloud — no shared password, no separate account, and nothing passes through our servers. Sharing is included with Premium; joining a household is always free for your spouse.</p>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-2xl p-6 group">
+                    <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">Is Thrive a Christian budgeting app? <i class="fas fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-slate-400 mt-3">Thrive is built around Christian stewardship — being faithful with what you've been given. Giving comes first in the default budget, and the monthly review is encouraging rather than shaming. That said, it's a full-featured budgeting app anyone can use.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Is Thrive really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The core zero-based budgeting toolkit — budgets, transactions, imports, dashboard — is free forever, with no account and no ads. Premium ($8/mo) adds retirement, education, and real-estate planning tools, with a 7-day free trial in-app."}},
+        {"@type": "Question", "name": "Does Thrive connect to my bank?", "acceptedAnswer": {"@type": "Answer", "text": "No — by design. You never hand over bank credentials. Import transactions from the CSV, PDF, or OFX files your bank already gives you, or connect your inbox and let Thrive read the transaction-alert emails your bank already sends you. Nothing about your accounts ever touches our servers, because we don't have any."}},
+        {"@type": "Question", "name": "Where is my financial data stored?", "acceptedAnswer": {"@type": "Answer", "text": "On your device, and synced between your Mac and iPhone through your own private iCloud (Apple's encrypted CloudKit). There is no company server, no account with us, and no analytics or tracking of any kind."}},
+        {"@type": "Question", "name": "What does \"zero-based budgeting\" mean?", "acceptedAnswer": {"@type": "Answer", "text": "Each dollar of income gets assigned a job — giving, bills, savings, spending — until income minus assignments equals zero. It's the proven method behind envelope budgeting, and it's the fastest way to know exactly where your money goes."}},
+        {"@type": "Question", "name": "How is Thrive different from other budgeting apps?", "acceptedAnswer": {"@type": "Answer", "text": "Four things. Privacy: most budgeting apps link your bank and hold your finances on their servers — Thrive never does either; your data stays on your Apple devices and your private iCloud, and our App Privacy label reads 'Data Not Collected.' Family: Household Sharing gives you and your spouse one budget from separate Apple IDs — no shared login, and joining is free. Native: a real Mac app and iPhone app, not a website in a wrapper. Stewardship: Giving/Tithe is a first-class category, and the tools treat money as something you manage faithfully, not just optimize."}},
+        {"@type": "Question", "name": "Can my spouse and I share one budget?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Household Sharing is built in. Create a household in Settings, send your spouse an invite link, and they join from their own Apple ID. You both see and edit the same budget, synced peer-to-peer through iCloud — no shared password, no separate account, and nothing passes through our servers. Sharing is included with Premium; joining a household is always free for your spouse."}},
+        {"@type": "Question", "name": "Is Thrive a Christian budgeting app?", "acceptedAnswer": {"@type": "Answer", "text": "Thrive is built around Christian stewardship — being faithful with what you've been given. Giving comes first in the default budget, and the monthly review is encouraging rather than shaming. That said, it's a full-featured budgeting app anyone can use."}}
+      ]
+    }
+    </script>
+
+    <!-- VIDEOS TEASER -->
+    <section class="max-w-screen-2xl mx-auto px-6 pb-20">
+        <div class="bg-slate-900 rounded-3xl p-12 text-center">
+            <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-2">LEARN AS YOU GO</p>
+            <h3 class="text-3xl font-semibold mb-4">Watch training videos made for real users</h3>
+            <p class="text-slate-400 max-w-md mx-auto mb-6">Short, practical videos showing exactly how to set up your budget, import transactions, run a monthly review, and use the Premium planning tools — all while keeping everything private.</p>
+            <a href="videos.html" class="inline-flex items-center gap-x-2 text-emerald-400 hover:text-emerald-300 font-medium">Browse the video library <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER — Buttondown embed form. No API key: this posts to a public
+         endpoint, so there is no credential on the page to leak. -->
+    <section id="newsletter" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="max-w-xl mx-auto text-center">
+            <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-2">ONE EMAIL A MONTH</p>
+            <h3 class="text-3xl font-semibold mb-4">What shipped, and one idea worth trying</h3>
+            <p class="text-slate-400 mb-8">A short note once a month: what changed in Thrive, and one practical way to handle money well. No tracking pixel, no drip sequence, and your address is never sold or shared. Unsubscribe in one click.</p>
+            <form action="https://buttondown.com/api/emails/embed-subscribe/BeaconDigitalSolutionsLLC"
+                  method="post"
+                  target="popupwindow"
+                  onsubmit="window.open('https://buttondown.com/BeaconDigitalSolutionsLLC', 'popupwindow')"
+                  class="flex flex-col sm:flex-row gap-3 justify-center">
+                <label for="bd-email" class="sr-only">Email address</label>
+                <input type="email" name="email" id="bd-email" required
+                       placeholder="you@example.com"
+                       class="flex-1 min-w-0 bg-slate-900 border border-slate-700 focus:border-emerald-400 focus:outline-none rounded-3xl px-5 py-3.5 text-white placeholder-slate-500">
+                <button type="submit"
+                        class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-8 py-3.5 rounded-3xl whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-slate-500 text-xs mt-4">We use your address for this newsletter and nothing else. See our <a href="privacy.html" class="text-emerald-400 hover:text-emerald-300">privacy policy</a>.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <a href="products.html" class="hover:text-cyan-400">Products</a>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+    // Screenshot carousels. Scroll-snap already gives swipe + trackpad scrolling
+    // for free; this only adds the arrows, the dots, and keyboard paging, and
+    // reads the active slide back off scroll position so all three stay in sync
+    // however the user moved.
+    (function () {
+      document.querySelectorAll('[data-carousel]').forEach(function (root) {
+        var track = root.querySelector('.snap-track');
+        var slides = Array.prototype.slice.call(track.querySelectorAll('.snap-slide'));
+        var dotsBox = root.querySelector('[data-dots]');
+        if (!track || slides.length < 2) return;
+
+        var dots = slides.map(function (_, i) {
+          var d = document.createElement('button');
+          d.type = 'button';
+          d.className = 'dot h-2 w-2 rounded-full bg-slate-600 hover:bg-slate-400';
+          d.setAttribute('role', 'tab');
+          d.setAttribute('aria-label', 'Slide ' + (i + 1));
+          d.addEventListener('click', function () { go(i); });
+          dotsBox.appendChild(d);
+          return d;
+        });
+
+        function current() {
+          // Nearest slide centre to the viewport centre of the track.
+          var mid = track.scrollLeft + track.clientWidth / 2, best = 0, dist = Infinity;
+          slides.forEach(function (s, i) {
+            var c = s.offsetLeft + s.offsetWidth / 2, d = Math.abs(c - mid);
+            if (d < dist) { dist = d; best = i; }
+          });
+          return best;
+        }
+        function go(i) {
+          var s = slides[Math.max(0, Math.min(slides.length - 1, i))];
+          track.scrollTo({ left: s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2,
+                           behavior: 'smooth' });
+        }
+        function sync() {
+          var i = current();
+          dots.forEach(function (d, n) { d.setAttribute('aria-current', n === i ? 'true' : 'false'); });
+        }
+
+        root.querySelector('[data-prev]').addEventListener('click', function () { go(current() - 1); });
+        root.querySelector('[data-next]').addEventListener('click', function () { go(current() + 1); });
+        track.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); go(current() - 1); }
+        });
+
+        var tick;
+        track.addEventListener('scroll', function () {
+          clearTimeout(tick); tick = setTimeout(sync, 60);
+        }, { passive: true });
+        window.addEventListener('resize', sync);
+        sync();
+      });
+    })();
+    </script>
+</body>
+</html>

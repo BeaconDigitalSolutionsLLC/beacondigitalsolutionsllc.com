@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Beacon Digital Solutions. We build simple, reliable tools that protect people's data and time by keeping information on their own devices.">
+    <title>About | Beacon Digital Solutions</title>
+    
+<!-- Favicon with cache buster -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon-32x32.png?v=1">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon-16x16.png?v=1">
+<link rel="manifest" href="site.webmanifest?v=1">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { 
+            font-family: 'Inter', system_ui, sans-serif; 
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- HEADER -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+<div class="flex items-center gap-x-3">
+    <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+    <div>
+        <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+        <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+    </div>
+</div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <div class="relative group">
+                    <a href="products.html" class="hover:text-cyan-400 flex items-center gap-x-1 transition-colors">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="videos.html" class="hover:text-cyan-400 transition-colors">Videos</a>
+                <a href="about.html" class="text-cyan-400 transition-colors">About</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+            
+            <!-- Desktop CTA -->
+            <a href="thrive.html" 
+               class="hidden md:flex items-center gap-x-2 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-2.5 rounded-2xl text-sm transition-all">
+                <i class="fas fa-download"></i> Get Thrive
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" 
+                    class="md:hidden text-2xl text-slate-200">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="index.html" class="hover:text-cyan-400">Home</a>
+            <a href="products.html" class="hover:text-cyan-400">Products</a>
+            <a href="thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+            <a href="about.html" class="hover:text-cyan-400">About</a>
+            <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+            
+            <!-- Mobile CTA -->
+            <a href="products.html" 
+               class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="max-w-screen-2xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-12 gap-x-12 gap-y-12 items-start">
+            <!-- Photo + Bio -->
+            <div class="md:col-span-5">
+                <div class="sticky top-24">
+                    <div class="rounded-3xl border border-slate-800 bg-slate-900 p-10 text-center">
+                        <img src="images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions"
+                             class="h-20 mx-auto mb-6">
+                        <p class="text-2xl font-semibold tracking-tight">Beacon<span class="text-slate-400 font-normal"> Digital Solutions</span></p>
+                        <p class="mt-4 text-sm text-slate-400">Zero-data software company<br>Jupiter, Florida</p>
+                        <p class="mt-2 text-xs text-slate-500">The safest data is the data we never hold.</p>
+                        <a href="contact.html" class="inline-flex items-center gap-x-2 mt-6 text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+                            <i class="fas fa-envelope"></i> Get in touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-4">About Beacon Digital Solutions.</h1>
+                <p class="text-xl sm:text-2xl text-emerald-400 mb-8">We build tools that protect people's information and time instead of taking them.</p>
+                
+                <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
+                    <p>Beacon Digital Solutions was founded after seeing how easily technology can take more than it gives — collecting data and attention without clear benefit to the user.</p>
+                    
+                    <p>We build tools on a clear principle: your data belongs to you. Our products are designed so that we never see your information and never ask for it. All processing that can happen on your device does. This is not something you have to configure — it is how the tools are built.</p>
+                    
+                    <p>We offer our tools directly and keep the relationship simple. The goal is to create software that helps you manage responsibilities while protecting the information that is yours.</p>
+                </div>
+
+                <div class="mt-10 p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                    <h3 class="font-semibold text-xl mb-3 text-emerald-400">What we're building</h3>
+                    <p class="text-slate-300">A set of tools designed so that your information stays yours — on your devices and in your own private iCloud, never on our servers. It begins with <a href="thrive.html" class="text-white hover:underline">Thrive</a>, a private budgeting app for Mac and iPhone, offered with a free version and a premium tier for additional features.</p>
+                    
+                    <p class="mt-4 text-slate-300">We also provide straightforward resources to help people use these tools effectively.</p>
+                </div>
+
+                <div class="mt-8 text-sm text-slate-400">
+                    Beacon Digital Solutions LLC operates out of Jupiter, Florida, building tools that serve people rather than the other way around.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="index.html" class="hover:text-cyan-400">Home</a>
+                <a href="products.html" class="hover:text-cyan-400">Products</a>
+                <a href="videos.html" class="hover:text-cyan-400">Videos</a>
+                <a href="about.html" class="hover:text-cyan-400">About</a>
+                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optional: Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
