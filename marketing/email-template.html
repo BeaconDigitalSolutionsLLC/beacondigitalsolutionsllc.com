@@ -1,0 +1,66 @@
+<!--
+  Buttondown template — Beacon Digital Solutions / Thrive
+  Paste into Buttondown → Design (or Settings → Template).
+  {{ body }} is where your email's Markdown gets rendered.
+
+  Written for EMAIL, not the web: tables for layout, inline styles only,
+  no flexbox, no external CSS. Gmail and Outlook strip everything else.
+  Logo is served from your own domain, so it renders anywhere.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+       style="background:#f6f7f7;margin:0;padding:28px 12px;">
+  <tr>
+    <td align="center">
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+             style="max-width:560px;background:#ffffff;border:1px solid #e3e8e7;border-radius:10px;">
+
+        <!-- Wordmark -->
+        <tr>
+          <td style="padding:26px 30px 0 30px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding-right:10px;">
+                  <img src="https://beacondigitalsolutionsllc.com/images/Thrive/Thrive_logo_dark_64x64.png"
+                       width="30" height="30" alt="Thrive"
+                       style="display:block;border-radius:7px;">
+                </td>
+                <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+                           font-size:16px;font-weight:600;color:#10191c;letter-spacing:-.01em;">
+                  Thrive
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Body: Buttondown renders your Markdown here -->
+        <tr>
+          <td style="padding:22px 30px 8px 30px;
+                     font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+                     font-size:16px;line-height:1.62;color:#25312f;">
+            {{ body }}
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:12px 30px 26px 30px;">
+            <div style="border-top:1px solid #e3e8e7;padding-top:16px;
+                        font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+                        font-size:12.5px;line-height:1.6;color:#778887;">
+              <strong style="color:#4a5957;">Beacon Digital Solutions LLC</strong><br>
+              Private personal finance for Mac and iPhone.<br>
+              <a href="https://beacondigitalsolutionsllc.com/thrive.html"
+                 style="color:#0b6e70;text-decoration:none;">beacondigitalsolutionsllc.com</a>
+              &nbsp;·&nbsp;
+              <a href="{{ unsubscribe_url }}" style="color:#778887;text-decoration:underline;">Unsubscribe</a>
+            </div>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
