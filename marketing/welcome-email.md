@@ -35,8 +35,8 @@ ever. You bring a file you exported yourself. That's the whole connection.
 
 **A complete budget is free. Not a trial — free.**
 
-Your income gets assigned before the month starts, giving comes first rather
-than last, and at month end you can see exactly where it all went. Budgets,
+Your income gets assigned before the month starts, giving is funded first
+rather than last, and at month end you can see exactly where it all went. Budgets,
 transactions, imports, the dashboard, the emergency fund, debt payoff —
 that's the free app, and it isn't hobbled to push you somewhere.
 
