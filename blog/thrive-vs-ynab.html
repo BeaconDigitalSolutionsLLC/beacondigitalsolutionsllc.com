@@ -33,16 +33,64 @@
 </head>
 <body class="bg-slate-950 text-slate-200 antialiased">
 
-<nav class="border-b border-slate-800">
-    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center gap-x-3">
-        <a href="../index.html" class="flex items-center gap-x-2 text-white font-semibold">
-            <img src="../images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md">
-            <span>Thrive</span>
-        </a>
-        <span class="text-slate-600">/</span>
-        <a href="../blog.html" class="text-slate-400 hover:text-white text-sm">Blog</a>
-    </div>
-</nav>
+<header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="../images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+                <div>
+                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="../index.html" class="hover:text-cyan-400">Home</a>
+                <div class="relative group">
+                    <a href="../products.html" class="hover:text-cyan-400 flex items-center gap-x-1">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="../thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="../images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+                <a href="../about.html" class="hover:text-cyan-400">About</a>
+                <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="flex items-center gap-x-3">
+                <a href="../thrive.html#download" 
+                   class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-5 py-2 rounded-2xl text-sm items-center gap-x-2">
+                    <i class="fas fa-download"></i> <span class="hidden sm:inline">Download Free</span>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="../index.html" class="hover:text-cyan-400">Home</a>
+            <a href="../products.html" class="hover:text-cyan-400">Products</a>
+            <a href="../thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="../images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+            <a href="../about.html" class="hover:text-cyan-400">About</a>
+            <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+            <a href="../products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+</header>
 
 <article class="max-w-3xl mx-auto px-6 py-14">
 
@@ -142,13 +190,40 @@
     </div>
 </article>
 
-<footer class="border-t border-slate-800 py-10">
-    <div class="max-w-3xl mx-auto px-6 text-slate-500 text-sm">
-        © 2026 Beacon Digital Solutions LLC ·
-        <a href="../thrive.html" class="hover:text-white">Thrive</a> ·
-        <a href="../privacy.html" class="hover:text-white">Privacy</a>
-    </div>
-</footer>
+<footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="../images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="../index.html" class="hover:text-cyan-400">Home</a>
+                <a href="../products.html" class="hover:text-cyan-400">Products</a>
+                <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+                <a href="../about.html" class="hover:text-cyan-400">About</a>
+                <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="../support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="../privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="../eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

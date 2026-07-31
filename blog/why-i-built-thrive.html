@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I got tired of being the product | Why I built Thrive</title>
+    <meta name="description" content="Why I built a budgeting app that never asks for your bank login. Your transaction history is the most revealing document you own — and most budgeting apps hand it to a company you never chose.">
+    <link rel="canonical" href="https://beacondigitalsolutionsllc.com/blog/why-i-built-thrive.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="I got tired of being the product">
+    <meta property="og:description" content="Your spending history is the most revealing document you own. Here is why I built a budgeting app that never sees it.">
+    <meta property="og:url" content="https://beacondigitalsolutionsllc.com/blog/why-i-built-thrive.html">
+    <meta property="og:image" content="https://beacondigitalsolutionsllc.com/images/Thrive/dashboard-iphone.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="apple-itunes-app" content="app-id=6779286706">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/Thrive/Thrive_logo_dark_64x64.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "I got tired of being the product",
+      "datePublished": "2026-07-31",
+      "author": { "@type": "Person", "name": "Taylor Miller" },
+      "publisher": { "@type": "Organization", "name": "Beacon Digital Solutions LLC" },
+      "mainEntityOfPage": "https://beacondigitalsolutionsllc.com/blog/why-i-built-thrive.html"
+    }
+    </script>
+    <script data-goatcounter="https://beacondigitalsolutionsllc.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+
+<header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="../images/logos/BDS_Logo_White.png" alt="Beacon Digital Solutions" class="h-9">
+                <div>
+                    <span class="font-semibold text-2xl tracking-tight">Beacon</span>
+                    <span class="text-slate-400 text-lg tracking-tight">Digital Solutions</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="../index.html" class="hover:text-cyan-400">Home</a>
+                <div class="relative group">
+                    <a href="../products.html" class="hover:text-cyan-400 flex items-center gap-x-1">
+                        Products <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
+                    </a>
+                    <div class="absolute left-0 top-full hidden group-hover:block z-50 w-64 pt-2">
+                        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-xl py-2">
+                            <a href="../thrive.html" class="flex items-center gap-x-2.5 px-4 py-2 text-sm hover:bg-slate-800">
+                                <img src="../images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-6 w-6 rounded-md flex-shrink-0">
+                                <span>Thrive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+                <a href="../about.html" class="hover:text-cyan-400">About</a>
+                <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                    class="md:hidden text-2xl text-slate-200" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="flex items-center gap-x-3">
+                <a href="../thrive.html#download" 
+                   class="hidden md:flex bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-5 py-2 rounded-2xl text-sm items-center gap-x-2">
+                    <i class="fas fa-download"></i> <span class="hidden sm:inline">Download Free</span>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-6 flex flex-col gap-4 text-sm font-medium">
+            <a href="../index.html" class="hover:text-cyan-400">Home</a>
+            <a href="../products.html" class="hover:text-cyan-400">Products</a>
+            <a href="../thrive.html" class="flex items-center gap-x-2 pl-4 text-xs hover:text-cyan-400">
+                <img src="../images/Thrive/Thrive_logo_dark_64x64.png" alt="" class="h-5 w-5 rounded-md flex-shrink-0">
+                <span>Thrive</span>
+            </a>
+            <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+            <a href="../about.html" class="hover:text-cyan-400">About</a>
+            <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+            <a href="../products.html" class="mt-4 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-6 py-3 rounded-2xl text-sm inline-flex items-center justify-center gap-x-2">
+                <i class="fas fa-wallet"></i> See Our Tools
+            </a>
+        </div>
+</header>
+
+<article class="max-w-3xl mx-auto px-6 py-14">
+
+    <p class="uppercase tracking-widest text-xs text-emerald-400 font-medium mb-3">Why we built this</p>
+    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight mb-5">
+        I got tired of being the product
+    </h1>
+    <p class="text-slate-400 text-sm mb-10">July 31, 2026 &middot; 4 min read &middot; by Taylor Miller</p>
+
+    <div class="space-y-6 text-lg leading-relaxed text-slate-300">
+
+        <p class="text-xl text-slate-200">I got tired of my data being somebody else's business model. Not just financial data &mdash; all of it. Somewhere along the way it became normal that using a piece of software means handing over a record of your life so a company can make money from it.</p>
+
+        <p>You notice it in small ways first. An ad for the thing you mentioned out loud. A recommendation that knows a little too much. Then one day you actually read what you agreed to, and the arrangement is right there in plain language: the product is free because you are what's being sold.</p>
+
+        <p>For most software that's annoying. For money software it's something else.</p>
+
+        <h2 class="text-2xl font-semibold text-white pt-6">What a budgeting app actually knows</h2>
+
+        <p>Your transaction history is the most revealing document you own. Not your email, not your photos &mdash; your spending. It knows where you were on Tuesday and who you were with. It knows what you're treating and which doctor you saw. It knows whether you're giving, gambling, job-hunting, or quietly struggling. It knows your marriage is in counseling before your family does.</p>
+
+        <p>Most budgeting apps get all of it. They connect to your accounts by asking for your bank username and password, then passing those credentials to a third-party data aggregator you never chose and have no relationship with. That company sees the transactions behind your login. How such firms handle and share consumer financial data has been the subject of class-action litigation and regulatory scrutiny in recent years.</p>
+
+        <p>Plenty of people are fine with that trade, and it does buy real convenience &mdash; transactions appear without you lifting a finger. I'm not here to tell anyone they're wrong for taking it.</p>
+
+        <p>I just didn't want to take it myself.</p>
+
+        <h2 class="text-2xl font-semibold text-white pt-6">So I took matters into my own hands</h2>
+
+        <p>My family was trying to do something ordinary and hard: give first, spend on purpose, and know where the money actually went at the end of the month. Every tool that made that easy wanted the keys to everything. Every tool that didn't was a spreadsheet.</p>
+
+        <p>So I built the thing I wanted, on nights and weekends, for us. That's the whole origin story. Thrive exists because I wanted my own family's records to stay ours.</p>
+
+        <p>The rule I built it on is simple: <strong class="text-white">I never see your data, because I have nowhere to put it.</strong> There's no server of mine in the middle. Your records live on your Mac and iPhone and sync through <em>your</em> iCloud account. There's no bank login, ever &mdash; you export a file yourself and hand it to an app running on your own machine.</p>
+
+        <p>That's not a promise you have to take on faith. Look at Thrive's App Store privacy label. It reads <strong class="text-white">Data Not Collected</strong>, and Apple &mdash; not me &mdash; is the one holding me to it.</p>
+
+        <h2 class="text-2xl font-semibold text-white pt-6">Why the budget itself is free</h2>
+
+        <p>If I believe people are being poorly served here, it would be strange to put the fix behind a paywall.</p>
+
+        <p>So a complete zero-based budget is free, permanently. Not a trial. Budgets, transactions, imports, the dashboard, the emergency fund, debt payoff &mdash; all free, and not crippled to push you somewhere. Your income gets assigned before the month starts, giving comes first rather than last, and at month end you can see exactly where it all went.</p>
+
+        <p>Premium is $8 a month, and it's for the longer horizon: retirement and college projections, real estate and mortgage payoff, the year-to-date review. Useful when you want it. Not needed to budget well. That's the business &mdash; a small subscription from people who want the planning tools, rather than a data pipe running quietly in the background.</p>
+
+        <h2 class="text-2xl font-semibold text-white pt-6">What I'm asking</h2>
+
+        <p>Try the free version. Export one CSV, drop it in, and see your month laid out honestly. It takes about fifteen minutes, and if it isn't for you, nothing follows you out the door &mdash; there's no account to delete, because there was never an account.</p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+            <a href="https://apps.apple.com/app/id6779286706"
+               class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-semibold px-7 py-3.5 rounded-3xl inline-flex items-center gap-x-2">
+                Get Thrive &mdash; free
+            </a>
+            <a href="../thrive.html#first-budget"
+               class="border border-slate-600 hover:border-white px-7 py-3.5 rounded-3xl font-semibold">
+                See the fifteen-minute walkthrough
+            </a>
+        </div>
+
+        <p class="text-sm text-slate-500 pt-8 border-t border-slate-800 mt-10">Taylor Miller builds Thrive at Beacon Digital Solutions LLC in Jupiter, Florida. Questions or corrections: support@beacondigitalsolutionsllc.com</p>
+
+    </div>
+</article>
+
+<footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-3 gap-y-12 text-sm">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img src="../images/logos/BDS_Logo_White.png" alt="Logo" class="h-8">
+                    <div>
+                        <span class="font-semibold text-2xl">Beacon</span>
+                        <span class="text-slate-400 text-lg">Digital Solutions</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">Jupiter, FL • Privacy-first tools for families</p>
+            </div>
+            
+            <div class="flex flex-col gap-y-2 text-sm">
+                <a href="../index.html" class="hover:text-cyan-400">Home</a>
+                <a href="../products.html" class="hover:text-cyan-400">Products</a>
+                <a href="../blog.html" class="hover:text-cyan-400">Blog</a>
+                <a href="../about.html" class="hover:text-cyan-400">About</a>
+                <a href="../contact.html" class="hover:text-cyan-400">Contact</a>
+                <a href="../support.html" class="hover:text-cyan-400">Support</a>
+            </div>
+            
+            <div>
+                <p class="text-slate-400 text-sm mb-4">Legal</p>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <a href="../privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                    <a href="../eula.html" class="hover:text-cyan-400">EULA</a>
+                </div>
+                <p class="text-xs text-slate-500 mt-8">© 2026 Beacon Digital Solutions LLC</p>
+                <a href="https://x.com/MillerPTaylor" target="_blank" class="text-xs text-cyan-400 hover:text-white mt-1 inline-block">Follow @MillerPTaylor on X</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
